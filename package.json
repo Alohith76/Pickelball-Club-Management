@@ -1,0 +1,29 @@
+{
+  "name": "aught2-pickleball",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "mobile"
+  ],
+  "scripts": {
+    "build": "npm run --workspace=mobile build:web",
+    "build:web": "npm run --workspace=mobile build:web",
+    "mobile": "npm run --workspace=mobile start",
+    "mobile:tunnel": "npm run --workspace=mobile start:tunnel",
+    "mobile:lan": "npm run --workspace=mobile start:lan",
+    "mobile:ios": "npm run --workspace=mobile ios",
+    "mobile:android": "npm run --workspace=mobile android"
+  },
+  "devDependencies": {
+    "uuid": "^11.1.1"
+  },
+  "overrides": {
+    "uuid": "$uuid",
+    "xcode": {
+      "uuid": "$uuid"
+    },
+    "eslint-plugin-react": {
+      "eslint": "$eslint"
+    }
+  }
+}
